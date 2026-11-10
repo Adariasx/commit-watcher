@@ -1,16 +1,4 @@
 #!/usr/bin/env python3
-"""Vigila los espejos de GitHub de Kafka y Remielle y avisa por Discord.
-
-- Lee los ultimos commits de cada rama vigilada (API publica de GitHub).
-- Compara con state.json (SHAs ya vistos). La primera vez solo siembra el estado, sin avisar.
-- Por cada commit nuevo lee los archivos cambiados y marca los sensibles.
-- Un SHA solo se marca como visto despues de que Discord acepto el aviso.
-
-Variables de entorno:
-  DISCORD_WEBHOOK  URL del webhook de Discord (obligatoria salvo DRY_RUN=1)
-  GH_TOKEN         token de GitHub (opcional; en Actions es github.token)
-  DRY_RUN          si es "1", imprime el aviso en vez de enviarlo
-"""
 import json
 import os
 import re
