@@ -11,7 +11,7 @@ WATCH = [
     {"repo": "thexeondev/remielle", "branch": "0.1.x", "label": "remielle/remielle"},
 ]
 SENSITIVE = re.compile(
-    r"Storage\.zig|Player\.zig|Header|\.proto|rmctl|build\.zig|config\.zon|defaults/",
+    r"Player/Storage\.zig|(^|/)Player\.zig$|current_version|Header|\.proto$|rmctl|(^|/)build\.zig$|config\.zon|defaults/",
     re.I,
 )
 STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "state.json")
